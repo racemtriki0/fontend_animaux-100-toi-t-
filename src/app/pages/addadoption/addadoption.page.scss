@@ -1,0 +1,64 @@
+ion-toolbar{
+  --background:rgb(223, 219, 236);
+}
+
+ion-title{
+  color:rgb(236, 43, 107);
+}
+
+
+div{
+  color:rgb(236, 43, 107);
+  font-size:smaller;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+p{
+  color:rgb(145, 145, 150);
+  font-size: small;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+ion-title{
+  color:rgb(104, 122, 204);
+  font-family: Georgia, serif;
+}
+
+
+input {
+  border: 1px solid rgb(67, 67, 245);
+  border-radius: 4px;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 5px;
+}
+
+
+textarea{
+  border: 1px solid rgb(54, 54, 238);
+  border-radius: 4px;
+  
+}
+form{
+    padding-left: 30px;
+}
+
+ion-content {
+   
+  align-items: center;
+  background: #D8AA96;
+  display: grid;
+  font-size: 14px;
+  font-weight: 400;
+  height: 100vh;
+  justify-items: center;
+  weight: 100vw;
+}
+
+
+button {
+  border: none;
+  border-radius: 50%;
+  height: 38px;
+  margin-right: 10px;
+  outline: none;
+  width: 38px;
+}

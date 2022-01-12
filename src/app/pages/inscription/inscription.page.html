@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="end">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title">Bienvenu !</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+
+
+    <ion-item>
+      <ion-input color="light" class="ion-text-center" clearInput placeholder="Courrier électronique" [(ngModel)]="email">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input color="light" [type]="passwordType" class="ion-text-center" clearInput placeholder="Mot de passe" [(ngModel)]="password">
+      </ion-input>
+      <ion-icon name="eye" color="gray" (click)="togglePassword()"> </ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-input color="light" [type]="passwordType" class="ion-text-center" clearInput placeholder="Répéter le mot de passe" [(ngModel)]="password2">
+      </ion-input>
+      <ion-icon name="eye" color="gray" (click)="togglePassword()"> </ion-icon>
+    </ion-item>
+ 
+    
+  </ion-col>
+</ion-row>
+</ion-grid>
+
+
+  <ion-item id="spinner">
+    <ion-spinner class="bubbles" *ngIf="spinner == true"></ion-spinner>
+  </ion-item>
+
+  <ion-button *ngIf="password == password2" expand="block" class="text capitalize" color="tertiary" shape="round" (click)="createUser()">
+    Inscription
+  </ion-button>
+
+  <ion-button color="light" expand="block" class="capitalize" shape="round" href="/authentification">
+    J'ai déja un compte
+  </ion-button>
+
+</ion-content>
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>inscription</ion-title>
+    <ion-menu-button slot="start"></ion-menu-button>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)=" onCreerUtilisateur(f.value)">
+
+    <ion-item>
+    <ion-label color="light">Nom utilisateur</ion-label>
+    <ion-input color="light"  type="text" name="id" placeholder="Saisir Nom utilisateur"
+   ngModel></ion-input>
+    </ion-item>
+
+    <ion-item>
+    <ion-label color="light">Mot de passe</ion-label>
+    <ion-input color="light"  type="password" name="pass" placeholder="Mot de passe"
+   ngModel></ion-input>
+    </ion-item>
+    
+
+    <ion-button color="light"  type="submit" expand="block" shape="round" fill="outline"> Inscription</ion-button>
+   
+    <div style="text-align: center; " (click)="onGoLogin()" color="light">
+    J'ai déja un compte
+    </div>
+    </form>
+   
+</ion-content>
+ -->

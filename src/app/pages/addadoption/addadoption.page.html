@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title>add adoption</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button color="tertiary" (click)="close()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  
+    <form [formGroup]="form" (submit)="onSavePost()" >
+      <div>
+       Nom: <input 
+               type="text"
+               formControlName="title"
+               placeholder="Nom Animal"
+             >
+    <!--    //help to define mat error in ngif (#title)-->
+        <p *ngIf="form.get('title').invalid">SVP entrer nom animal</p>
+      </div>
+
+      
+
+
+      <div>
+        Age: <input 
+               type="text"
+               formControlName="age"
+               placeholder="age"
+             >
+    <!--    //help to define mat error in ngif (#title)-->
+    <p *ngIf="form.get('age').invalid">SVP entrer age</p>
+      </div>
+     
+      <div>
+        Ville: <input 
+               type="text"
+               formControlName="ville"
+               placeholder="ville"
+             >
+    <!--    //help to define mat error in ngif (#title)-->
+    <p *ngIf="form.get('ville').invalid">SVP entrer ville</p>
+      </div>
+      <div>
+       Race: <input 
+               type="text"
+               formControlName="race"
+               placeholder="race"
+             >
+    <!--    //help to define mat error in ngif (#title)-->
+        <p *ngIf="form.get('race').invalid">SVP entrer race</p>
+      </div>
+      <div>
+        Categorie :<input 
+               type="text"
+               formControlName="cetegorie"
+               placeholder="cetegorie"
+             >
+    <!--    //help to define mat error in ngif (#title)-->
+        <p *ngIf="form.get('cetegorie').invalid">SVP entrer cetegorie</p>
+      </div>
+      <div>
+       Telephone: <input 
+               type="text"
+               formControlName="tel"
+               placeholder="tel"
+             >
+    <!--    //help to define mat error in ngif (#title)-->
+        <p *ngIf="form.get('tel').invalid">SVP entrer num telephone</p>
+      </div>
+     
+      <div>
+        <button  type="button"  (click)="filePicker.click()">Upload Image</button>
+        <input type="file" #filePicker  (change)="onImagePicked($event)">
+      </div>
+      <div class="image-preview" *ngIf="imgPreviewToUrl !== '' && imgPreviewToUrl && form.get('image').valid">
+        <img [src]="imgPreviewToUrl" [alt]="form.value.title">
+      </div>
+      <div>
+    <textarea 
+              rows="3"
+              formControlName="content"
+              placeholder="description"
+             ></textarea>
+    <!--    //#content means to help define error ngIf-->
+        <div *ngIf="form.get('content').invalid">SVP entrer description</div><br>
+    </div>
+     
+      <ion-button  color="primary" type="submit">Ajouter Adoption</ion-button>
+
+
+    </form>
+</ion-content>
+

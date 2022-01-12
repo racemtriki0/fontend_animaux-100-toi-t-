@@ -1,0 +1,68 @@
+.padding {
+    padding: 5%!important;
+}
+.logo ion-icon{
+    font-size: 9em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo img{
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.logo {
+    position: relative;
+    height: 250px;
+}
+
+ion-item {
+    --ion-background-color: transparent!important;
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+.button-native {
+  border-radius: 900px;
+}
+.fu {
+  //Or
+  --padding-bottom: 20px;
+  --border-radius: 400px;
+}
+  ion-icon {
+    color: rgb(54, 133, 223);
+    vertical-align: middle;
+  }
+  ion-button {
+    --border-radius: 20px;
+    --padding-start: 50px;
+  }
+  .hot {
+    background-color: transparent;
+  }
+  ion-input {
+    --placeholder-font-style: "roboto";
+    --placeholder-color: rgb(209, 5, 5);
+    font-family: "roboto";
+  }
+  
+  
+  ion-content {
+  --background: linear-gradient(132deg, #d1a2a2, #cea9a9, #bbadad);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0px;
+  }
+  

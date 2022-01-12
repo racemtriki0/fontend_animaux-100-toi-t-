@@ -1,0 +1,54 @@
+ <ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title>Reclamation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <div
+    *ngFor="let post of posts"
+    class="flex justify-center"
+    (click)="post.expanded = !post.expanded"
+  >
+    <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden my-4">
+      <img class="w-full h-56" [src]="post.imagePath" alt="avatar" />
+      <div class="flex items-center px-6 py-3 bg-white justify-end">
+        <h1 class="mx-3 text-gray-700 font-semibold text-lg">Supprimer</h1>
+        <ion-icon
+          name="trash-outline"
+          class="text-red-700 text-xl"
+          (click)="onDelete(post.id)"
+        ></ion-icon>
+      </div>
+      <div class="py-4 px-6">
+        <h1 class="text-3xl font-bold text-center text-blue-800">
+          {{ post.title }}
+        </h1>
+        <p class="py-2 text-lg text-gray-700">{{ post.content }}</p>
+        <div class="flex items-center mt-4 text-gray-700">
+          <ion-icon name="heart-circle-outline"></ion-icon>
+          <h1 class="px-2 text-sm">{{ post.cetegorie }} {{ post.race }}</h1>
+        </div>
+        <div class="flex items-center mt-4 text-gray-700">
+          <ion-icon name="fitness-outline"></ion-icon>
+          <h1 class="px-2 text-sm">{{ post.age }}</h1>
+        </div>
+        <div class="flex items-center mt-4 text-gray-700">
+          <ion-icon name="location-outline"></ion-icon>
+          <h1 class="px-2 text-sm">{{ post.ville}}</h1>
+        </div>
+        <div class="flex items-center mt-4 text-gray-700">
+          <ion-icon name="call-outline"></ion-icon>
+          <h1 class="px-2 text-sm">{{ post.tel}}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="open()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

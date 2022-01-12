@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="end">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+      </ion-buttons>
+    <ion-title>Animaux 100 toi(t)</ion-title> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">        
+        <img src="assets/images/authh.png" height="220px">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+   
+
+    <ion-item>
+      <ion-label class='hot'>Nom utilisateur</ion-label>
+      <ion-input class="ion-text-center"  type="text" clearInput 
+      placeholder="Saisir Nom utilisateur" 
+      [(ngModel)]="email">
+      
+     </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label >Mot de passe</ion-label>
+      <ion-input style="border-radius: 100px;" [type]="passwordType" class="fu" class="ion-text-center" clearInput placeholder="Mot de passe"
+        (keyup.enter)="login()" [(ngModel)]="password">
+      </ion-input>
+      <ion-icon name="eye" color="gray" (click)="togglePassword()"> </ion-icon>
+    </ion-item>
+
+  </ion-col>
+</ion-row>
+</ion-grid>
+
+  <ion-button expand="block" class="text capitalize" color="tertiary" shape="round" (click)="login()">
+    Connexion
+  </ion-button>
+
+  <ion-item id="spinner">
+    <ion-spinner *ngIf="spinner == true"></ion-spinner>
+  </ion-item>
+
+  <div class="ion-text-center">
+    <a href="/inscription">
+      <ion-icon name="person-add-outline"></ion-icon>
+      Créer un compte
+    </a>
+    <br>
+    <a href="/reset-password">
+      <ion-icon name="mail-outline"></ion-icon>
+      Récupérer le mot de passe
+    </a>
+  </div>
+
+</ion-content>
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>authentification</ion-title>
+    <ion-menu-button slot="start"></ion-menu-button>
+  </ion-toolbar>
+  
+</ion-header>
+<ion-content>
+  <div class="padding">
+    
+  <div class="logo">
+    <ion-icon color="light" name="play-circle-outline"></ion-icon> 
+  </div>
+
+  <form #f="ngForm" (ngSubmit)="onLogin(f.value)">
+    <ion-item>
+      <ion-label color="light">Nom utilisateur</ion-label>
+     <ion-input color="light" type="text" name="id" placeholder="Saisir Nom utilisateur" [(ngModel)]="id">
+     </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="light">Mot de passe</ion-label>
+     <ion-input  color="light" type="text" name="pass" placeholder="Mot de passe" ngModel></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block"  color="light"  shape="round" fill="outline">Connexion</ion-button>
+    <br>
+    <ion-button (click)="onGoSignUp()" color="tertiary" expand="block" shape="round">
+      Nouvel Utilisateur
+     </ion-button>
+
+     <ion-item lines="none">
+      <ion-label color="light" style="text-align: center;">Ou connectez-vous avec</ion-label>
+    </ion-item>
+
+     <div class="flex">
+      <ion-button color="facebook" shape="round">
+        <ion-icon slot="start" name="logo-facebook"></ion-icon>
+        Facebook
+      </ion-button>
+      <ion-button color="google"  shape="round">
+        <ion-icon slot="start" name="logo-google"></ion-icon>
+        Google
+      </ion-button>
+    </div>
+    </form>
+  </div>
+</ion-content>
+
+
+ -->

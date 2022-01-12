@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title>store</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button color="tertiary" (click)="open()">
+        <ion-icon slot="end" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content><!-- This is an example component -->
+  <div *ngFor="let store of stores" class="bg-gray-200 w-full py-5  flex justify-center items-center">
+    <div class="relative pl-1 bg-gray-200 flex justify-center rounded-xl hover:scale-105 duration-500 transform transition cursor-pointer">
+        <!-- Tag Discount -->
+        <div class="top-0 left-0 mt-3 px-2 rounded-lg absolute z-30 bg-green-500 text-gray-100 text-xs md:text-sm font-medium md:block">Open</div>
+        <div class="top-0 left-0 h-2 md:h-3 mt-5 px-2 absolute z-20 bg-green-500"></div>
+        <div class="top-0 left-0 h-2 md:h-3 mt-6 pl-5 rounded-3xl absolute z-0 bg-green-600"></div>
+        <div class="w-52 pb-2 bg-white rounded-xl shadow-xl z-10">
+            <div class="relative">
+            <!-- :src="image.largeImageURL"     -->
+                <img [src]="store.imagePath" [alt]="store.nom" class="max-h-60 object-cover rounded-t-xl" alt="">
+                <!-- Tag rekomendasi -->
+                <div class="bottom-0 right-0 mb-2 mr-2 px-2 rounded-lg absolute bg-yellow-500 text-gray-100 text-xs font-medium">Recommended</div>
+            </div>
+            <div class="px-2 py-1">
+                <!-- Product Title -->
+                <div class="text-sm md:text-base font-bold pr-2">{{ store.nom }}</div>
+                <div class="flex py-2">
+                    <!-- Distance -->
+                    <div class="bg-gray-200 p-1 mr-2 rounded-full text-xs font-medium text-gray-900">
+                      <ion-icon name="call-outline"></ion-icon>{{ store.tel }}
+                    </div>
+                    <div class="flex justify-between item-center">
+                            <div class="flex items-center">
+                                <div xmlns="http://www.w3.org/2000/svg" class="h-3 md:h-5 md:w-5 text-yellow-500" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <ion-icon name="pricetags-outline"></ion-icon>
+                            </div>
+                                <!-- Rating total -->
+                                <p class="text-gray-600 font-bold text-xs md:text-sm ml-1">
+                                  {{ store.prix }}
+                                    <!-- Jumlah review -->
+                                    
+                                </p>
+                            </div>
+                    </div>
+                </div>
+                <!-- Alamat -->
+                <p class="pb-1 md:pb-2 text-xs md:text-sm text-gray-500">{{ store.desc }}</p>
+                <!-- Tombol pesan -->
+                <div *ngIf="userIsAuthenticated && userId === store.creator">
+                  <button  class="inset-x-0 bottom-0 flex justify-center bg-blue-500 hover:bg-white text-sm md:text-base border hover:border-2 hover:border-blue-500 rounded-xl w-14 md:w-16 p-1 text-gray-100 hover:text-blue-900" (click)="onDelete(store.id)">Delete</button>
+                </div>
+           
+            </div>
+        </div>
+    </div> 
+  </div>
+  
+<!--   <div multi="true" *ngIf="stores.length > 0">
+    <div *ngFor="let store of stores">
+      <h1>
+        <p>{{ store.nom }}</p>
+      </h1>
+      <p class="image-preview" ><img [src]="store.imagePath" [alt]="store.nom"></p>
+      <p>{{ store.prix }}</p>
+      <h1>{{ store.tel }}</h1>
+      <h1>{{ store.desc }}</h1>
+      <div *ngIf="userIsAuthenticated && userId === store.creator">
+        <a  color="primary" [routerLink]="['/edit',store.id]">Edit</a>
+        <button  color="warn" (click)="onDelete(store.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+  <p class="mat-body-1" *ngIf="stores.length <= 0">No Posts added yet</p> -->
+
+</ion-content>
