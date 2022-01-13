@@ -5,7 +5,8 @@
 
 # AUthentification
 ![authentifm](https://user-images.githubusercontent.com/84456341/149181228-374af557-a50e-45a5-ada1-c2aa08059106.JPG)
-
+# Accueil
+![Capture](https://user-images.githubusercontent.com/84456341/149376102-5068c8cd-e86f-4c07-a914-d658f545041c.JPG)
 # Adoption
 ![adoptionnnnn](https://user-images.githubusercontent.com/84456341/149181502-c6ef9c00-9924-4264-a293-c95bad8f327d.JPG)
 # Store
